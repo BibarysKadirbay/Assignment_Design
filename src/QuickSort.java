@@ -4,7 +4,11 @@ import static java.util.Collections.sort;
 
 public class QuickSort {
     private static final Random rdm = new Random();
-    public static void quickSort(int [] arr, int l, int r) {
+    public static void quickSort(int[] arr) {
+        if(arr.length <= 1) return;
+        quickSort(arr, 0, arr.length-1);
+    }
+    private static void quickSort(int [] arr, int l, int r) {
         while(l < r){
             int p = rdm.nextInt(l , r);
             int pivot = arr[r];

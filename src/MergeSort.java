@@ -1,6 +1,10 @@
 public class MergeSort {
     private static final int CUTOFF = 16;
-    public static void mergeSort(int[] arr, int l ,  int r){
+    public void mergeSort(int[] a){
+        if(a.length <= 1) return ;
+        mergeSort(a, 0, a.length-1);
+    }
+    private static void mergeSort(int[] arr, int l , int r){
         int n = r - l + 1;
         if(n <= CUTOFF){
             for (int i = l; i < r; i++) {
